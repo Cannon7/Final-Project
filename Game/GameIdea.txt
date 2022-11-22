@@ -1,0 +1,20 @@
+2 player space invader. 
+Each player is against each other
+Player 1 on left using wasd
+Player 2 using arrow keys
+
+Whoever destroys the other player first wins.
+2 layers of aliens per side.
+1st layer (from center of screen) has one health
+2nd layer (closer to the player) has two health
+Players have 3 health.
+
+Each bullet can destroy any alien/rocks?
+
+
+
+
+What we will need to code:
+Bullets
+Collision (from experiment modified)
+etc.
