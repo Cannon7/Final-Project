@@ -23,7 +23,7 @@ namespace Example.Colliding
             try
             {
                 // get the actors from the cast
-                Actor 
+                Actor player = scene.GetFirstActor("player");
                 Actor bullet = scene.GetFirstActor("bullets");
                 Actor alien = scene.GetFirstActor("aliens");
                 
@@ -33,16 +33,20 @@ namespace Example.Colliding
                 /// THIS STUFF HERE IS FROM THE EXAMPLE CODE!!! WE'LL NEED TO UPDATE FROM HERE WHEN BULLETS AND ACTORS ARE MADE.
 
                 // detect a collision between the actors.
-                if (actor2.Overlaps(actor1)) // If bullet hits actor
+                if (bullet.Overlaps(alien)) // If bullet hits actor
                 {
                     // Remove both actors
-                    Remove(actor2);
-                    Remove(actor1);
+                    Remove(alien);
+                    Remove(bullet);
                 }
                 else
                 {
                     // otherwise, remove at end of screen
-                    
+                    // If bullet hits a certain point then remove the bullet so that the bullet doesn't hit the players from behind. 
+                    if (bullet.GetCenterX(1000)) //This is 100% a guess on where the end of the screen is
+                    {
+                        Remove(bullet);
+                    }
                 }
             }
             catch (Exception exception)
