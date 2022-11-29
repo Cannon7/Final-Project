@@ -55,11 +55,10 @@ namespace Example.Colliding
         {
             if (_isGameOver == true)
             {
-                Snake snake = (Snake)cast.GetFirstActor("p1");
-                Snake snake2 = (Snake)cast.GetFirstActor("p2");
-                List<Actor> segments = snake.GetSegments();
-                List<Actor> segments2 = snake2.GetSegments();
-                Food food = (Food)cast.GetFirstActor("food");
+                Snake p1 = (Snake)cast.GetFirstActor("p1");
+                Snake p2 = (Snake)cast.GetFirstActor("p2");
+                Food bullet = (Food)cast.GetFirstActor("bullet");
+                Food invader = (Food)cast.GetFirstActor("invader");
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
@@ -72,15 +71,12 @@ namespace Example.Colliding
                 cast.AddActor("messages", message);
 
                 // make everything white
-                foreach (Actor segment in segments)
-                {
+                
                     segment.SetColor(Constants.WHITE);
-                }
-                foreach (Actor segment2 in segments2)
-                {
+              
                     segment2.SetColor(Constants.WHITE);
-                }
-                food.SetColor(Constants.WHITE);
+
+                    food.SetColor(Constants.WHITE);
             }
         }
     }
