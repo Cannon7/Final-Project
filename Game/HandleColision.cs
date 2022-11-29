@@ -29,7 +29,7 @@ namespace Example.Colliding
 
 
 
-                /// THIS STUFF HERE IS FROM THE EXAMPLE CODE!!!
+                /// THIS STUFF HERE IS FROM THE EXAMPLE CODE!!! WE'LL NEED TO UPDATE FROM HERE WHEN BULLETS AND ACTORS ARE MADE.
 
                 // detect a collision between the actors.
                 if (actor2.Overlaps(actor1))
