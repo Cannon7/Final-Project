@@ -243,6 +243,12 @@ namespace Byui.Games.Casting
         {
             _velocity = new Vector2(vx, vy);
         }
+         public virtual void MoveNext()
+        {
+            int x = ((_position.GetX() + _velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
+            int y = ((_position.GetY() + _velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
+            _position = new Point(x, y);
+        }
 
         public virtual void WrapIn(Actor region)
         {
